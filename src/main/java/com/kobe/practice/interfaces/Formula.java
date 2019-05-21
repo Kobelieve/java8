@@ -2,7 +2,7 @@ package com.kobe.practice.interfaces;
 
 /**
  * @ClassName Formula
- * @Description TODO
+ * @Description Formula
  * @Author Tao
  * @Date 2019-04-30 16:30
  * @Version 1.0
