@@ -7,7 +7,7 @@ package com.kobe.practice.interfaces;
  * @Date 2019-04-30 16:35
  * @Version 1.0
  */
-public class FormulaImpl {
+public class FormulaTest {
 
     /**
      * 可以通过匿名内部类访问接口

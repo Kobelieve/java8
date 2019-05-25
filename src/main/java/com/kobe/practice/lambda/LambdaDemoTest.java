@@ -20,7 +20,7 @@ public class LambdaDemoTest {
     private static List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
 
     @Test
-    public void test1() {
+    public void testOldCompare() {
         Collections.sort(names, new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
@@ -31,19 +31,19 @@ public class LambdaDemoTest {
     }
 
     @Test
-    public void test2() {
+    public void testNewCompare() {
         Collections.sort(names, (String o1, String o2) -> {
             return o1.compareTo(o2);
         });
     }
 
     @Test
-    public void test3() {
+    public void testShort() {
         Collections.sort(names, (String o1, String o2) -> o1.compareTo(o2));
     }
 
     @Test
-    public void test4() {
+    public void testShoter() {
         names.sort((o1, o2) -> o1.compareTo(o2));
     }
 
