@@ -19,29 +19,31 @@ public class TestItemGroup {
         ItemVO itemVO5 = new ItemVO(5L, "广州", "KOBE", "www.baidu5.com");
         List<ItemVO> itemVOS = Lists.newArrayList(itemVO1, itemVO2, itemVO3, itemVO4, itemVO5);
 
-        Map<Integer, List<ItemVO>> map = Maps.newHashMap();
+//        Map<Integer, List<ItemVO>> map = GroupUtils.group(itemVOS);
+        Map<Integer, List<ItemVO>> map1 = GroupUtils.group(itemVOS,1091);
+//        Map<Integer, List<ItemVO>> map = Maps.newHashMap();
+//
+//        for (int i = 0; i < itemVOS.size(); i++) {
+//            ItemVO itemVO = itemVOS.get(i);
+//            boolean flag = false;
+//            for (Integer num : map.keySet()) {
+//                List<ItemVO> voList = map.get(num);
+//                boolean contains = voList.contains(itemVO);
+//                if (contains) {
+//                    voList.add(itemVO);
+//                    flag = true;
+//                    break;
+//                }
+//            }
+//            if (!flag) {
+//                int size = map.size();
+//                map.put(size, Lists.newArrayList(itemVO));
+//            }
+//
+//        }
 
-        for (int i = 0; i < itemVOS.size(); i++) {
-            ItemVO itemVO = itemVOS.get(i);
-            boolean flag = false;
-            for (Integer num : map.keySet()) {
-                List<ItemVO> voList = map.get(num);
-                boolean contains = voList.contains(itemVO);
-                if (contains) {
-                    voList.add(itemVO);
-                    flag = true;
-                    break;
-                }
-            }
-            if (!flag) {
-                int size = map.size();
-                map.put(size, Lists.newArrayList(itemVO));
-            }
-
-        }
-
-        map.forEach((k, v) -> {
-            System.out.println(k + ":" + map.get(k));
+        map1.forEach((k, v) -> {
+            System.out.println(k + ":" + map1.get(k));
         });
 
     }
