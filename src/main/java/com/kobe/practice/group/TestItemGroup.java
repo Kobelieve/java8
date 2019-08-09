@@ -3,11 +3,12 @@ package com.kobe.practice.group;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 按对象属性分组
+ */
 public class TestItemGroup {
 
     public static void main(String[] args) {
@@ -19,27 +20,29 @@ public class TestItemGroup {
         List<ItemVO> itemVOS = Lists.newArrayList(itemVO1, itemVO2, itemVO3, itemVO4, itemVO5);
 
         Map<Integer, List<ItemVO>> map = Maps.newHashMap();
+
         for (int i = 0; i < itemVOS.size(); i++) {
             ItemVO itemVO = itemVOS.get(i);
             boolean flag = false;
-            int a = 0;
             for (Integer num : map.keySet()) {
-                boolean contains = map.get(num).contains(itemVO);
+                List<ItemVO> voList = map.get(num);
+                boolean contains = voList.contains(itemVO);
                 if (contains) {
+                    voList.add(itemVO);
                     flag = true;
-                    a = num;
                     break;
                 }
             }
-
-            if (flag) {
-                map.get(a).add(itemVO);
-            } else {
-                map.put(i, Lists.newArrayList(itemVO));
+            if (!flag) {
+                int size = map.size();
+                map.put(size, Lists.newArrayList(itemVO));
             }
+
         }
 
-        System.out.println(map);
+        map.forEach((k, v) -> {
+            System.out.println(k + ":" + map.get(k));
+        });
 
     }
 
