@@ -9,8 +9,14 @@ import java.util.List;
  */
 public class DoubleColonDemo {
 
+    /**
+     * 类名::方法名
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-        List<Object> list = Lists.newArrayList();
+        List<Object> list = Lists.newArrayList(1,2,3);
+        list.forEach(System.out::println);
     }
 
 }
